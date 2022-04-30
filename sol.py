@@ -1,5 +1,5 @@
 from collections import deque
-#fin = open("./test_set_1/ts1_input.txt", 'r')
+# sample folder from kickstart test data
 testn = 2
 sample = True
 if sample:
@@ -52,10 +52,6 @@ def solve(grid):
     visited[0][0] = 1
     while q:
         row,col = q.popleft()
-        #if visited[row][col]:
-
-            #continue
-        #print(row,col)
         
         total -= 1
         nr = row * 2

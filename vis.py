@@ -4,9 +4,11 @@ import time
 r = tkinter.Tk()
 screen = tkinter.Canvas(r, width = 1600, height = 800)
 screen.pack()
+#offsets from left + top sides, and block size
 LOFF = 2
 TOFF = 2
-BSIZE =20
+BSIZE = 20
+#sample folder from kickstart
 testn = 2
 sample = True
 if sample:
@@ -15,8 +17,6 @@ else:
     samplen = ""
 fin = open(f"./{samplen}test_set_{testn}/{samplen}ts{testn}_input.txt", 'r')
 f = open("./output.txt", 'r')
-#fin = open("./sample_test_set_2/sample_ts2_input.txt", 'r')
-#fin = open("./test_set_1/ts1_input.txt", 'r')
 fin.readline()
 garbage = []
 
@@ -45,7 +45,6 @@ def draw():
     #print(grid, r, c)
     for row in range(r):
         for col in range(c):
-            
             if grid[row][col] != '*':
                 basel = LOFF + col * 2 * BSIZE
                 baset = TOFF + row * 2 * BSIZE
@@ -74,11 +73,10 @@ def draw():
         c,d = convert(cr,cc)
         garbage.append(screen.create_line(a,b,c,d))
     screen.update()
-    #time.sleep(0.1)
     input()
+
 while True:
     draw()
-
 
 r.mainloop()
 f.close()
